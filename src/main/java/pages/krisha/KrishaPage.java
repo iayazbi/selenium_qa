@@ -9,17 +9,18 @@ public class KrishaPage extends BasePage {
     public KrishaPage(WebDriver driver) {
         super(driver);
     }
+    // Задать элементы в переменную для того что бы не было ошибки прогрузки
     By countRooms = By.xpath("//*[@class='search-element-wrap specs_kvartiry']/div[1]/select[1]");
     By option3rooms = By.xpath("//*[@class='search-element-wrap specs_kvartiry']/div[1]/select[1]/option[6]");
     By findBtn = By.xpath("//*[@class='search-btn-main']");
 
-    public KrishaPage enterCountRooms(){
+    public KrishaPage enterCountRooms(){ // условия поиска
         driver.findElement(countRooms).click();
         driver.findElement(option3rooms).click();
         return this;
     }
 
-    public KrishaPage ClickToFind(){
+    public KrishaPage ClickToFind(){ // кнопка найти
         driver.findElement(findBtn).click();
         return this;
     }
